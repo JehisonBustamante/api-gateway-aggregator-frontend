@@ -2,12 +2,36 @@
 	import '../app.css';
 	let { children } = $props();
 
-	// Aquí pondrás la URL de tu portfolio principal cuando la tengas
+	// Estado para abrir/cerrar el menú en móviles
+	let isMenuOpen = $state(false);
+
 	const portfolioUrl = "https://tu-portfolio-principal.vercel.app";
+
+	function toggleMenu() {
+		isMenuOpen = !isMenuOpen;
+	}
 </script>
 
-<div class="flex h-screen bg-gray-900 text-white font-sans selection:bg-orange-500/30">
-	<aside class="w-72 bg-gray-950 border-r border-gray-800 flex flex-col shadow-2xl">
+<div class="flex h-screen bg-gray-900 text-white font-sans selection:bg-orange-500/30 overflow-hidden">
+
+	<button
+		onclick={toggleMenu}
+		class="md:hidden fixed top-4 right-4 z-[100] p-3 bg-orange-600 rounded-xl shadow-lg active:scale-95 transition-transform"
+	>
+		{#if isMenuOpen}
+			✕
+		{:else}
+			☰
+		{/if}
+	</button>
+
+	<aside
+		class="
+      fixed inset-y-0 left-0 z-[90] w-72 bg-gray-950 border-r border-gray-800 flex flex-col shadow-2xl transition-transform duration-300
+      {isMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+      md:relative md:translate-x-0 md:flex
+    "
+	>
 
 		<div class="p-8">
 			<h1 class="text-2xl font-black text-white tracking-tighter leading-none">
@@ -23,7 +47,7 @@
 
 			<div>
 				<p class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest">Visualizando ahora</p>
-				<div class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-500 font-bold shadow-inner">
+				<div class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-500 font-bold">
 					<span class="text-xl">🚀</span>
 					<span class="text-sm">Gateway Aggregator</span>
 				</div>
@@ -32,7 +56,7 @@
 			<div class="pt-4">
 				<a
 					href={portfolioUrl}
-					class="group relative block w-full p-[2px] rounded-2xl bg-gradient-to-br from-orange-400 to-orange-700 shadow-lg shadow-orange-900/20 hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-1 active:scale-95"
+					class="group relative block w-full p-[2px] rounded-2xl bg-gradient-to-br from-orange-400 to-orange-700 shadow-lg"
 				>
 					<div class="bg-gray-950 rounded-[14px] py-4 px-4 transition-colors group-hover:bg-transparent">
        <span class="relative z-10 flex items-center justify-center gap-3 font-black text-xs uppercase tracking-widest text-white">
@@ -40,9 +64,6 @@
        </span>
 					</div>
 				</a>
-				<p class="text-[10px] text-center text-gray-600 mt-4 italic">
-					Explora mis otros desarrollos
-				</p>
 			</div>
 		</nav>
 
@@ -57,8 +78,15 @@
 		</div>
 	</aside>
 
+	{#if isMenuOpen}
+		<button
+			onclick={toggleMenu}
+			class="md:hidden fixed inset-0 bg-black/60 z-[80] backdrop-blur-sm"
+		></button>
+	{/if}
+
 	<main class="flex-1 overflow-y-auto bg-gray-900 bg-[size:40px_40px] bg-[radial-gradient(theme(colors.gray.800/10%)_1px,transparent_1px)] bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gray-900 via-gray-950 to-black">
-		<div class="max-w-5xl mx-auto py-12 px-8">
+		<div class="max-w-5xl mx-auto py-12 px-4 md:px-8 pt-20 md:pt-12">
 			{@render children()}
 		</div>
 	</main>
