@@ -32,7 +32,7 @@ Este proyecto es un **Dashboard Inteligente** diseñado para centralizar informa
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/tu-usuario/gateway-aggregator-frontend.git](https://github.com/JehisonBustamante/gateway-aggregator-frontend.git)
+    git clone [https://github.com/JehisonBustamante/gateway-aggregator-frontend.git](https://github.com/JehisonBustamante/gateway-aggregator-frontend.git)
     cd gateway-aggregator-frontend
     ```
 
