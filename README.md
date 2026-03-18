@@ -32,7 +32,7 @@ Este proyecto es un **Dashboard Inteligente** diseñado para centralizar informa
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/JehisonBustamante/gateway-aggregator-frontend.git](https://github.com/JehisonBustamante/gateway-aggregator-frontend.git)
+    git clone https://github.com/JehisonBustamante/gateway-aggregator-frontend.git
     cd gateway-aggregator-frontend
     ```
 
@@ -51,8 +51,21 @@ Este proyecto es un **Dashboard Inteligente** diseñado para centralizar informa
 
 ---
 
-## 💡 Filosofía de Diseño
-
-Como futuro **Ingeniero de Software**, mi enfoque no es solo "hacer que el código funcione", sino que la tecnología sea **accesible**.
-
-El mayor desafío de este proyecto fue la **Alfabetización Financiera**: logré transformar números abstractos de la bolsa en frases explicativas. Por ejemplo, en lugar de mostrar solo un precio, el sistema explica que el usuario está viendo el valor de una "rebanada" de la empresa, acercando el
+## 🌐 Despliegue
+Para desplegar en producción, se recomienda usar Vercel o Netlify. Asegúrate de configurar las variables de entorno para la URL del backend.
+```bash
+npm run build
+npm run preview
+```
+---
+## 🤝 Contribuciones
+¡Contribuciones son bienvenidas! Si deseas mejorar el proyecto, por favor sigue estos
+pasos:
+1.  Fork el repositorio.
+2. Crea una nueva rama para tu feature (`git checkout -b feature/nueva-feature`).
+3. Realiza tus cambios y haz commit (`git commit -m 'Agrega nueva feature'`).
+4. Push a la rama (`git push origin feature/nueva-feature`).
+5. Abre un Pull Request. 
+6. Describe tus cambios y espera la revisión.
+7. Una vez aprobado, tu PR será mergeado al proyecto principal.
+8. ¡Gracias por contribuir!
