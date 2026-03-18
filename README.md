@@ -1,42 +1,58 @@
-# sv
+# 🚀 Gateway Aggregator - Personal Dashboard
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Este proyecto es un **Dashboard Inteligente** diseñado para centralizar información crítica en tiempo real: clima local, indicadores financieros (Acciones e IPSA) y noticias de actualidad. Construido como parte de un ecosistema de microservicios, este frontend consume una API personalizada para ofrecer una experiencia de usuario (UX) simplificada, rápida y con un diseño de alto nivel.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## ✨ Características Principales
 
-```sh
-# create a new project
-npx sv create my-app
-```
+* **🌦️ Clima Dinámico:** Interfaz que cambia de color, iconografía y gradientes según la condición meteorológica de Santiago (Soleado, Nublado, Lluvia, etc.).
+* **📈 Mercado Financiero Humano:** Visualización de acciones chilenas con una **capa de interpretación en lenguaje natural**. Utiliza analogías simples para explicar conceptos financieros complejos a usuarios no técnicos.
+* **📰 Feed de Noticias:** Sistema de noticias paginado que consume Google News, permitiendo navegación fluida y acceso directo a las fuentes originales en pestañas nuevas.
+* **🎨 Diseño Premium:** Estética *Dark Mode* moderna utilizando Tailwind CSS, con patrones geométricos sutiles, gradientes radiales y animaciones de estado (pulsing status) para indicar la conexión con el servidor.
+* **🏗️ Arquitectura Desacoplada:** Frontend construido en **SvelteKit 5** que se comunica de forma asíncrona con un Backend en **FastAPI**.
 
-To recreate this project with the same configuration:
+---
 
-```sh
-# recreate this project
-npx sv@0.12.8 create --template minimal --types ts --add eslint prettier --install npm api-gateway-aggregator-frontend
-```
+## 🛠️ Tech Stack
 
-## Developing
+### Frontend
+* **SvelteKit 5**: Uso de Runes (`$derived`, `$props`) para una reactividad moderna.
+* **TypeScript**: Tipado estricto para asegurar la integridad de los datos de la API.
+* **Tailwind CSS**: Estilizado mediante clases utilitarias y diseño responsivo.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Backend (Consumido)
+* **FastAPI (Python)**: Procesamiento eficiente de datos.
+* **yfinance**: Obtención de datos bursátiles en tiempo real.
+* **Feedparser**: Procesamiento de feeds RSS de noticias.
 
-```sh
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## 🚀 Instalación y Uso Local
 
-## Building
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/tu-usuario/gateway-aggregator-frontend.git](https://github.com/JehisonBustamante/gateway-aggregator-frontend.git)
+    cd gateway-aggregator-frontend
+    ```
 
-To create a production version of your app:
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-```sh
-npm run build
-```
+3.  **Configurar la API:**
+    Asegúrate de que el backend de Python esté activo. Verifica la URL de conexión en `src/routes/+page.ts`.
 
-You can preview the production build with `npm run preview`.
+4.  **Iniciar modo desarrollo:**
+    ```bash
+    npm run dev
+    ```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
+
+## 💡 Filosofía de Diseño
+
+Como futuro **Ingeniero de Software**, mi enfoque no es solo "hacer que el código funcione", sino que la tecnología sea **accesible**.
+
+El mayor desafío de este proyecto fue la **Alfabetización Financiera**: logré transformar números abstractos de la bolsa en frases explicativas. Por ejemplo, en lugar de mostrar solo un precio, el sistema explica que el usuario está viendo el valor de una "rebanada" de la empresa, acercando el
