@@ -5,7 +5,7 @@
 	// Estado para abrir/cerrar el menú en móviles
 	let isMenuOpen = $state(false);
 
-	const portfolioUrl = "https://tu-portfolio-principal.vercel.app";
+	const portfolioUrl = "https://jehisonbustamante.vercel.app";
 
 	function toggleMenu() {
 		isMenuOpen = !isMenuOpen;
