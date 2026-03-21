@@ -20,12 +20,20 @@
 	// 4. Configuración visual del Clima
 	const weatherConfig: Record<string, { icon: string; bg: string; label: string }> = {
 		'Sunny': { icon: '☀️', bg: 'from-blue-400 to-blue-600', label: 'Soleado' },
-		'Clear': { icon: '🌙', bg: 'from-gray-800 to-blue-900', label: 'Despejado' },
-		'Cloudy': { icon: '☁️', bg: 'from-gray-500 to-gray-700', label: 'Nublado' },
+		'Clear': { icon: '☀️', bg: 'from-blue-500 to-indigo-600', label: 'Despejado' },
+		'Cloudy': { icon: '☁️', bg: 'from-gray-400 to-gray-600', label: 'Nublado' },
 		'Partly cloudy': { icon: '⛅', bg: 'from-blue-300 to-gray-500', label: 'Parcialmente Nublado' },
 		'Rain': { icon: '🌧️', bg: 'from-blue-700 to-blue-900', label: 'Lluvia' },
 		'Patchy rain nearby': { icon: '🌦️', bg: 'from-blue-400 to-gray-600', label: 'Lluvia Ligera' },
-		'Overcast': { icon: '☁️', bg: 'from-gray-600 to-gray-800', label: 'Cubierto' }
+		'Overcast': { icon: '☁️', bg: 'from-gray-600 to-gray-800', label: 'Cubierto' },
+		'Fog': { icon: '🌫️', bg: 'from-gray-300 to-gray-500', label: 'Niebla' },
+		'Mist': { icon: '🌫️', bg: 'from-gray-200 to-gray-400', label: 'Neblina' },
+		'Haze': { icon: '🌫️', bg: 'from-orange-200 to-gray-400', label: 'Calima' },
+		'Snow': { icon: '❄️', bg: 'from-blue-100 to-white', label: 'Nieve' },
+		'Thunderstorm': { icon: '⛈️', bg: 'from-purple-800 to-black', label: 'Tormenta' },
+		'Drizzle': { icon: '🌧️', bg: 'from-blue-300 to-blue-500', label: 'Llovizna' },
+		'Clouds': { icon: '☁️', bg: 'from-gray-400 to-gray-600', label: 'Nubes' },
+		'Clima no disponible': { icon: '⚠️', bg: 'from-gray-800 to-black', label: 'Clima No Disponible' }
 	};
 
 	// Clima actual derivado
